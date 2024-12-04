@@ -1,25 +1,27 @@
-# Simple Optimism Node
+# Simple World Chain Node
 
-A simple docker compose script for launching full / archive node for OP Stack chains.
+A simple docker compose script for launching full / archive node for World Chain.
 
 <!-- ## Use cases
-* Docker compose to launch Optimism mainnet full / archive node -->
+* Docker compose to launch World Chain mainnet full / archive node -->
 
 ## Recommended Hardware
 
-### OP and Base Mainnet
+### World Chain Mainnet
 
 - 16GB+ RAM
 - 2 TB SSD (NVME Recommended)
 - 100mb/s+ Download
 
-### Testnets
+<!-- ### World Chain Sepolia
 
 - 16GB+ RAM
 - 500 GB SSD (NVME Recommended)
-- 100mb/s+ Download
+- 100mb/s+ Download -->
 
 ## Installation and Configuration
+
+> Tested on Ubuntu 24.04.
 
 ### Install docker and docker compose
 
@@ -84,10 +86,11 @@ Open `.env` with your editor of choice
 ### Mandatory configurations
 
 * **NETWORK_NAME** - Choose which Optimism network layer you want to operate on:
-    * `op-mainnet` - Optimism Mainnet
+    <!-- * `op-mainnet` - Optimism Mainnet
     * `op-sepolia` - Optimism Sepolia (Testnet)
     * `base-mainnet` - Base Mainnet
-    * `base-sepolia` - Base Sepolia (Testnet)
+    * `base-sepolia` - Base Sepolia (Testnet) -->
+    * `worldchain-mainnet` - World Chain Mainnet
 * **NODE_TYPE** - Choose the type of node you want to run:
     * `full` (Full node) - A Full node contains a few recent blocks without historical states.
     * `archive` (Archive node) - An Archive node stores the complete history of the blockchain, including historical states.
@@ -99,16 +102,17 @@ Open `.env` with your editor of choice
     * `erigon` - Erigon
     * `basic` - Other providers
 * **HEALTHCHECK__REFERENCE_RPC_PROVIDER** - Specify the public RPC endpoint for Layer 2 network you want to operate on for healthchecking. For instance:
-    * **Optimism Mainnet** - https://mainnet.optimism.io
+    <!-- * **Optimism Mainnet** - https://mainnet.optimism.io
     * **Optimism Sepolia** - https://sepolia.optimism.io
     * **Base Mainnet** - https://mainnet.base.org
-    * **Base Sepolia** - https://sepolia.base.org
+    * **Base Sepolia** - https://sepolia.base.org -->
+    * **World Chain Mainnet** - https://worldchain-mainnet.g.alchemy.com/public
 
-### OP Mainnet only configurations
+<!-- ### OP Mainnet only configurations
 
 * **OP_GETH__HISTORICAL_RPC** - OP Mainnet RPC Endpoint for fetching pre-bedrock historical data
     * **Recommended:** https://mainnet.optimism.io
-    * Leave blank if you want to self-host pre-bedrock historical node for high-throughput use cases such as subgraph indexing.
+    * Leave blank if you want to self-host pre-bedrock historical node for high-throughput use cases such as subgraph indexing. -->
 
 ### Optional configurations
 
