@@ -69,8 +69,8 @@ It should returns an empty container list without having any error. Otherwise, r
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/smartcontracts/simple-optimism-node.git
-cd simple-optimism-node
+git clone https://github.com/0xPenryn/simple-worldchain-node.git
+cd simple-worldchain-node
 ```
 
 ### Copy .env.example to .env
@@ -85,7 +85,7 @@ Open `.env` with your editor of choice
 
 ### Mandatory configurations
 
-* **NETWORK_NAME** - Choose which Optimism network layer you want to operate on:
+* **NETWORK_NAME** - Choose which World Chain network you want to operate on:
     <!-- * `op-mainnet` - Optimism Mainnet
     * `op-sepolia` - Optimism Sepolia (Testnet)
     * `base-mainnet` - Base Mainnet
@@ -215,7 +215,7 @@ Simple Node Dashboard includes basic node information and will tell you if your 
 Use the following login details to access the dashboard:
 
 - Username: `admin`
-- Password: `optimism`
+- Password: `worldchain`
 
 Navigate over to `Dashboards > Manage > Simple Node Dashboard` to see the dashboard, see the following gif if you need help:
 
