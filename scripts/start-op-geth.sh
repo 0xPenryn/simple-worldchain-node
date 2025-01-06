@@ -45,6 +45,6 @@ exec geth \
   --discovery.port="${PORT__OP_GETH_P2P:-39393}" \
   --db.engine=pebble \
   --state.scheme=hash \
-  --op-network=$NETWORK_NAME" \
+  --op-network="$NETWORK_NAME" \
   $EXTENDED_ARG $@
 
