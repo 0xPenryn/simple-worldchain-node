@@ -16,6 +16,8 @@ echo Sampling, please wait
 
 if [ $CHAIN_ID -eq 480 ]; then
   L2_URL=https://worldchain-mainnet.g.alchemy.com/public
+elif [ $CHAIN_ID -eq 4801 ]; then
+  L2_URL=https://worldchain-sepolia.g.alchemy.com/public
 fi
 
 T0=`cast block-number --rpc-url $ETH_RPC_URL` ; sleep 10 ; T1=`cast block-number --rpc-url $ETH_RPC_URL`
