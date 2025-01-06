@@ -2,6 +2,8 @@
 
 A simple docker compose script for launching full / archive node for World Chain.
 
+> Forked from [simple-optimism-node](https://github.com/smartcontracts/simple-optimism-node).
+
 <!-- ## Use cases
 * Docker compose to launch World Chain mainnet full / archive node -->
 
@@ -91,6 +93,7 @@ Open `.env` with your editor of choice
     * `base-mainnet` - Base Mainnet
     * `base-sepolia` - Base Sepolia (Testnet) -->
     * `worldchain-mainnet` - World Chain Mainnet
+    * `worldchain-sepolia` - World Chain Sepolia
 * **NODE_TYPE** - Choose the type of node you want to run:
     * `full` (Full node) - A Full node contains a few recent blocks without historical states.
     * `archive` (Archive node) - An Archive node stores the complete history of the blockchain, including historical states.
@@ -107,6 +110,7 @@ Open `.env` with your editor of choice
     * **Base Mainnet** - https://mainnet.base.org
     * **Base Sepolia** - https://sepolia.base.org -->
     * **World Chain Mainnet** - https://worldchain-mainnet.g.alchemy.com/public
+    * **World Chain Sepolia** - https://worldchain-sepolia.g.alchemy.com/public
 
 <!-- ### OP Mainnet only configurations
 
@@ -148,8 +152,6 @@ docker compose logs <CONTAINER_NAME> -f --tail 10
 To view logs for a specific container. Most commonly used `<CONTAINER_NAME>` are:
 * op-geth
 * op-node
-* bedrock-init
-* l2geth
 
 ### Stop
 
@@ -201,7 +203,7 @@ Run progress.sh to estimate remaining sync time and speed.
 This will show the sync speed in blocks per minute and the time until sync is completed.
 
 ```
-Chain ID: 10
+Chain ID: 480
 Please wait
 Blocks per minute: ...
 Hours until sync completed: ...
