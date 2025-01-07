@@ -31,4 +31,3 @@ exec op-reth node \
   --rollup.disable-tx-pool-gossip \
   --enable-discv5-discovery \
   --port="${PORT__OP_GETH_P2P:-39393}" \
-  
