@@ -9,7 +9,7 @@ METRICS_PORT="${METRICS_PORT:-6060}"
 
 mkdir -p $RETH_DATA_DIR
 
-exec ./op-reth node \
+exec op-reth node \
   --datadir="$RETH_DATA_DIR" \
   --log.stdout.format log-fmt \
   --ws \
