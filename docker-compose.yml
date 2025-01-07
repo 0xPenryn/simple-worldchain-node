@@ -43,6 +43,7 @@ services:
       - ${PORT__OP_GETH_P2P:-39393}:30303/tcp
     volumes:
         - op_reth:/data
+        - ./scripts/:/scripts
         - shared:/shared
     env_file:
       - ./envs/${NETWORK_NAME}/op-geth.env
