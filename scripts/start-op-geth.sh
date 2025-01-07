@@ -47,4 +47,3 @@ exec geth \
   --state.scheme=hash \
   --op-network="$NETWORK_NAME" \
   $EXTENDED_ARG $@
-
