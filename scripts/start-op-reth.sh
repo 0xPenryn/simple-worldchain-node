@@ -30,3 +30,4 @@ exec op-reth node \
   --rollup.sequencer-http=$BEDROCK_SEQUENCER_HTTP \
   --rollup.disable-tx-pool-gossip \
   --enable-discv5-discovery \
+  --discovery.v5.port="${PORT__OP_GETH_P2P:-39393}" \
