@@ -94,7 +94,10 @@ Open `.env` with your editor of choice
     * `base-sepolia` - Base Sepolia (Testnet) -->
     * `worldchain-mainnet` - World Chain Mainnet
     * `worldchain-sepolia` - World Chain Sepolia
-* **NODE_TYPE** - Choose the type of node you want to run:
+* **COMPOSE_PROFILES** - Choose which Execution Client you want to run:
+    * `geth` - op-geth, the default option.
+    * `reth` - op-reth, an alternate Execution Client focused on speed. Only usable as an Archive node, but uses less storage than `geth`.
+* **NODE_TYPE** - Choose the type of node you want to run (only applicable to `geth`):
     * `full` (Full node) - A Full node contains a few recent blocks without historical states.
     * `archive` (Archive node) - An Archive node stores the complete history of the blockchain, including historical states.
 * **OP_NODE__RPC_ENDPOINT** - Specify the endpoint for the RPC of Layer 1 (e.g., Ethereum mainnet). For instance, you can use the free plan of Alchemy for the Ethereum mainnet.
@@ -150,7 +153,7 @@ docker compose logs <CONTAINER_NAME> -f --tail 10
 ```
 
 To view logs for a specific container. Most commonly used `<CONTAINER_NAME>` are:
-* op-geth
+* op-geth (or op-reth)
 * op-node
 
 ### Stop

@@ -29,6 +29,25 @@ services:
       - ${PORT__OP_GETH_P2P:-39393}:${PORT__OP_GETH_P2P:-39393}/tcp
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    profiles: ["geth"]
+
+  op-reth:
+    image: ghcr.io/paradigmxyz/op-reth:v1.1.4
+    restart: unless-stopped
+    stop_grace_period: 5m
+    entrypoint: /scripts/start-op-reth.sh
+    ports:
+      - ${PORT__OP_GETH_HTTP:-9993}:8545
+      - ${PORT__OP_GETH_WS:-9994}:8546
+      - ${PORT__OP_GETH_P2P:-39393}:30303/udp
+      - ${PORT__OP_GETH_P2P:-39393}:30303/tcp
+    volumes:
+        - op_reth:/data
+        - shared:/shared
+    env_file:
+      - ./envs/${NETWORK_NAME}/op-geth.env
+      - .env
+    profiles: ["reth"]
 
   op-node:
     image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v1.10.2
