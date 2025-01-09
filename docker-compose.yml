@@ -1,14 +1,5 @@
 services:
 
-  healthcheck:
-    image: ethereumoptimism/replica-healthcheck:${IMAGE_TAG__HEALTHCHECK:-latest}
-    restart: unless-stopped
-    env_file:
-      - ./envs/common/healthcheck.env
-      - .env
-    ports:
-      - ${PORT__HEALTHCHECK_METRICS:-7300}:7300
-
   op-geth:
     image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-geth:v1.101411.4
     restart: unless-stopped

@@ -107,13 +107,6 @@ Open `.env` with your editor of choice
     * `quicknode` - Quicknode (ETH only)
     * `erigon` - Erigon
     * `basic` - Other providers
-* **HEALTHCHECK__REFERENCE_RPC_PROVIDER** - Specify the public RPC endpoint for Layer 2 network you want to operate on for healthchecking. For instance:
-    <!-- * **Optimism Mainnet** - https://mainnet.optimism.io
-    * **Optimism Sepolia** - https://sepolia.optimism.io
-    * **Base Mainnet** - https://mainnet.base.org
-    * **Base Sepolia** - https://sepolia.base.org -->
-    * **World Chain Mainnet** - https://worldchain-mainnet.g.alchemy.com/public
-    * **World Chain Sepolia** - https://worldchain-sepolia.g.alchemy.com/public
 
 <!-- ### OP Mainnet only configurations
 
