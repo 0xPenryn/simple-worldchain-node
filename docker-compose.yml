@@ -1,7 +1,7 @@
 services:
 
   op-geth:
-    build: https://github.com/0xPenryn/op-geth.git#gnark-test
+    build: https://github.com/0xPenryn/op-geth.git#optimism
     restart: unless-stopped
     stop_grace_period: 5m
     entrypoint: /scripts/start-op-geth.sh
