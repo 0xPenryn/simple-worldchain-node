@@ -37,9 +37,8 @@ exec geth \
   --metrics.influxdb.endpoint=http://influxdb:8086 \
   --metrics.influxdb.database=opgeth \
   --syncmode="$GETH_SYNCMODE" \
-  --gcmode="$GETH_NODE_TYPE" \
   --state.scheme="$GETH_STATE_SCHEME" \
-  --history.state="$GETH_HISTORY_STATE" \
+  --history.state=0 \
   --authrpc.vhosts="*" \
   --authrpc.addr=0.0.0.0 \
   --authrpc.port=8551 \
