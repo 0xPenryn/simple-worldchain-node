@@ -96,4 +96,6 @@ volumes:
   influxdb_data:
   shared:
   op_geth:
+    external: true
   op_reth:
+    external: true
