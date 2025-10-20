@@ -26,4 +26,4 @@ exec op-reth node \
   --metrics=0.0.0.0:6060 \
   --chain="${CHAIN_NAME}" \
   --rollup.disable-tx-pool-gossip \
-  --port="${PORT__EXECUTION_P2P:-30303}" \
+  # --port="${PORT__EXECUTION_P2P:-30303}" \

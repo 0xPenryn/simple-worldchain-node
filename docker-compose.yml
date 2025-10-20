@@ -12,13 +12,13 @@ services:
       - ./scripts/:/scripts
       - shared:/shared
       - op_geth:/data
-    ports:
-      - ${PORT__EXECUTION_HTTP:-9993}:8545
-      - ${PORT__EXECUTION_WS:-9994}:8546
-      - ${PORT__EXECUTION_P2P:-30303}:${PORT__EXECUTION_P2P:-30303}/udp
-      - ${PORT__EXECUTION_P2P:-30303}:${PORT__EXECUTION_P2P:-30303}/tcp
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    # ports:
+    #   - ${PORT__EXECUTION_HTTP:-9993}:8545
+    #   - ${PORT__EXECUTION_WS:-9994}:8546
+    #   - ${PORT__EXECUTION_P2P:-30303}:${PORT__EXECUTION_P2P:-30303}/udp
+    #   - ${PORT__EXECUTION_P2P:-30303}:${PORT__EXECUTION_P2P:-30303}/tcp
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
     profiles: ["geth"]
 
   op-reth:
@@ -26,11 +26,11 @@ services:
     restart: unless-stopped
     stop_grace_period: 5m
     entrypoint: /scripts/start-op-reth.sh
-    ports:
-      - ${PORT__EXECUTION_HTTP:-9993}:8545
-      - ${PORT__EXECUTION_WS:-9994}:8546
-      - ${PORT__EXECUTION_P2P:-30303}:${PORT__EXECUTION_P2P:-30303}/udp
-      - ${PORT__EXECUTION_P2P:-30303}:${PORT__EXECUTION_P2P:-30303}/tcp
+    # ports:
+    #   - ${PORT__EXECUTION_HTTP:-9993}:8545
+    #   - ${PORT__EXECUTION_WS:-9994}:8546
+    #   - ${PORT__EXECUTION_P2P:-30303}:${PORT__EXECUTION_P2P:-30303}/udp
+    #   - ${PORT__EXECUTION_P2P:-30303}:${PORT__EXECUTION_P2P:-30303}/tcp
     volumes:
         - ./envs/${NETWORK_NAME}/config:/chainconfig
         - op_reth:/data
@@ -38,8 +38,8 @@ services:
         - shared:/shared
     env_file:
       - .env
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
     profiles: ["reth"]
 
   op-node:
@@ -53,12 +53,12 @@ services:
       - ./envs/${NETWORK_NAME}/config:/chainconfig
       - ./scripts/:/scripts
       - shared:/shared
-    ports:
-      - ${PORT__CONSENSUS_P2P:-9222}:9222/udp
-      - ${PORT__CONSENSUS_P2P:-9222}:9222/tcp
-      - ${PORT__CONSENSUS_HTTP:-9545}:9545
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    # ports:
+    #   - ${PORT__CONSENSUS_P2P:-9222}:9222/udp
+    #   - ${PORT__CONSENSUS_P2P:-9222}:9222/tcp
+    #   - ${PORT__CONSENSUS_HTTP:-9545}:9545
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
 
   prometheus:
     image: prom/prometheus:latest
@@ -78,8 +78,8 @@ services:
       - ./docker/grafana/provisioning/:/etc/grafana/provisioning/:ro
       - ./docker/grafana/dashboards:/var/lib/grafana/dashboards
       - grafana_data:/var/lib/grafana
-    ports:
-      - ${PORT__GRAFANA:-3000}:3000
+    # ports:
+    #   - ${PORT__GRAFANA:-3000}:3000
 
   influxdb:
     image: influxdb:1.8

@@ -45,6 +45,6 @@ exec geth \
   --authrpc.port=8551 \
   --authrpc.jwtsecret=/shared/jwt.txt \
   --rollup.disabletxpoolgossip=true \
-  --port="${PORT__EXECUTION_P2P:-30303}" \
-  --discovery.port="${PORT__EXECUTION_P2P:-30303}" \
   --op-network="$NETWORK_NAME" \
+  # --port="${PORT__EXECUTION_P2P:-30303}" \
+  # --discovery.port="${PORT__EXECUTION_P2P:-30303}" \
